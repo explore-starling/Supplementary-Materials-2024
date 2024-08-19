@@ -1,36 +1,15 @@
-This readme file was generated on 2024-07-16 by Rebecca Trapp
+This readme file was generated on 2024-07-16
 
 GENERAL INFORMATION
 
 Title of Dataset: Visual exploration and problem solving in European starlings 
-
-First Author Information
-Name: Rebecca Trapp
-ORCID: 0000-0002-7052-0058
-Institution: Purdue University
-Address: 915 Mitch Daniels Blvd, Room G369, West Lafayette, IN 47907
-Email: rtrapp@purdue.edu
-
-Principal Investigator Information
-Name: Jeffrey Lucas
-ORCID:
-Institution: Purdue University
-Address: 915 Mitch Daniels Blvd, West Lafayette, IN 47907
-Email: jlucas@purdue.edu
-
-
-Date of data collection: 2022-04-29 through 2022-09-20 
-
-Geographic location of data collection: 451 S 875 W, West Lafayette, IN 47906
-
-Information about funding sources that supported the collection of the data: A. Lindsey Graduate Fellowship in Ecology (awarded by Biological Sciences Department, Purdue University)
 
 
 SHARING/ACCESS INFORMATION
 
 Licenses/restrictions placed on the data: none
 
-Links to publications that cite or use the data: [link]
+Links to publications that cite or use the data: none
 
 Links to other publicly accessible locations of the data: none
 
@@ -39,7 +18,6 @@ Links/relationships to ancillary data sets: none
 Was data derived from another source?  no
 If yes, list source(s): 
 
-Recommended citation for this dataset: Trapp, R., Fernández-Juricic, E., and Lucas, J. [in prep] "Variation in use of visual strategies during exploration of a novel stimulus"
 
 
 DATA & FILE OVERVIEW
@@ -61,9 +39,9 @@ When was the file updated?
 
 METHODOLOGICAL INFORMATION
 
-Description of methods used for collection/generation of data: DeepLabCut (v. 2.3.10; Mathis et al. 2018), Behavioral Observation Research Interactive Software (BORIS; v. 8.17.1; Friard & Gamba 2016).  See [Trapp et al.] for full details.
+Description of methods used for collection/generation of data: DeepLabCut (v. 2.3.10; Mathis et al. 2018), Behavioral Observation Research Interactive Software (BORIS; v. 8.17.1; Friard & Gamba 2016).  See paper for full details.
 
-Methods for processing the data: R code written by Rebecca Trapp and Samuel Trapp.  See [Trapp et al.] for full details.
+Methods for processing the data: See paper for full details.
 
 Instrument- or software-specific information needed to interpret the data: R (v. 4.4.0), RStudio (v. 2024.04.1). Packages: tidyverse, dplyr, emmeans, factoextra, lme4, psych, afex, moments, survival, survminer, TraMineR, TraMineRextras, reshape2, nlme, rstatix, ggh4x, GGally, VGAM, tables, flextable, devtools, maditr, DescTools, ggplot2, ggsignif, ggfortify, ggbreak, ggalluvial
 
@@ -73,7 +51,7 @@ Environmental/experimental conditions: Included in Condition_Data.csv
 
 Describe any quality-assurance procedures performed on the data: Spot-checked head angle accuracy with protractor on screen.
 
-People involved with sample collection, processing, analysis and/or submission: Rebecca Trapp
+People involved with sample collection, processing, analysis and/or submission: xx
 
 
 DATA-SPECIFIC INFORMATION FOR: allboris.csv
@@ -143,7 +121,7 @@ Missing data codes: " ", "NA"
 Specialized formats or other abbreviations used: 
 
 
-DATA-SPECIFIC INFORMATION FOR: [Folder: DLC_Output] 
+DATA-SPECIFIC INFORMATION FOR: [NOT PROVIDED] 
 
 Number of variables: 49
 
@@ -156,6 +134,26 @@ Variable List: <list variable name(s), description(s), unit(s) and value labels 
 "[bodypart]_y" > the y-coordinate of the identified body part in the video
 "[bodypart]_likelihood" > the confidence measurement (p) produced by DeepLabCut that the body part is correctly identified (values below 0.6 are removed in R code)
 Body Parts in dataset: "BeakTip" (not used), "BeakMid" (mid-point of beak), "BeakBridge" (where the beak meets the forehead), "LeftNare" (not used), "RightNare" (not used), "LeftGapeline" (not used), "RightGapeline" (not used), "Chin" (not used), "LeftEye" (not used), "RightEye" (not used), "LeftShoulder" (wing joint on left), "RightShoulder" (wing joint on right), "TailTip" (not used), "Front" (box dot towards bird), "Back" (box dot towards camera), "Left" (box dot left of bird), "Right" (box dot right of bird)
+
+Missing data codes: " "
+
+Specialized formats or other abbreviations used: 
+
+
+DATA-SPECIFIC INFORMATION FOR: DLC[1-4].csv 
+
+Number of variables: 6
+
+Number of cases/rows: up to 272,618
+
+Variable List: <list variable name(s), description(s), unit(s) and value labels as appropriate for each>
+"ID" > metal ID number of individual
+"frame" > frame in video (60 fps)
+"visualfield" > determined by head angle [see code for details]; "Binocular", "Left Front Periphery", "Left Fovea", "Left Rear Periphery A", "Left Rear Periphery B", "Blind Spot", "Right Rear Periphery B", "Right Rear Periphery A", "Right Fovea", "Right Front Periphery"
+"[bodypart]_likelihood" > the confidence measurement (p) produced by DeepLabCut that the body part is correctly identified (values below 0.6 are removed in R code)
+"Angle" <- head angle calculated using the vector of the middle of the beak to the beak bridge, and the vector from the box center to the middle of the beak; 0-360 [see code for calculations]
+"Angle180" <- previous head angle adjusted to a range of 0-180, i.e., does not account for left and right directionality of the angle  [see code for calculations]
+"distcm" <- the distance between the box and the middle of the beak, converted from pixels to cm (floor grid used as scale) [see code for calculations]
 
 Missing data codes: " "
 
